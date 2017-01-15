@@ -55,16 +55,25 @@ matQperd = []; %matriz con las perdidas reactivas
 for i= 1:N_barras
     for k = 1:N_barras
         if Qmat(i,k) ~= 0
-            vec1 = [i k Qmat(i,k)];
-            vec2 = [k i Qmat(k,i)];
-            Qperd= [i k Qmat(i,k)+Qmat(k,i)];
-            matQ(end+1,:) = vec1;
-            matQ(end+1,:) = vec2;
-            matQperd(end+1,:) = Qperd; %Se rellena la matriz de perdidas
+            if i == k
+               vec1 = [i k Qmat(i,k)];
+               matQ(end+1,:) = vec1;
+            else
+                vec1 = [i k Qmat(i,k)];
+                vec2 = [k i Qmat(k,i)];
+                Qperd= [i k Qmat(i,k)+Qmat(k,i)];
+                matQ(end+1,:) = vec1;
+                matQ(end+1,:) = vec2;
+                matQperd(end+1,:) = Qperd; %Se rellena la matriz de perdidas                
+            end
             Qmat(k,i)=0;
         end
     end
 end
+
+PerdQtot = sum(matQperd(:,3));
+PerdPtot = sum(matPperd(:,3));
+
 
 %Se calcula la Potencia activa y Reactiva de la Slack
 for i = 1:N_barras
@@ -95,7 +104,7 @@ for i = 1:N_barras
     if vbarra(i).ID == 1
         vbarra(i).Pgen = vbarra(i).P;
         vbarra(i).Qgen = vbarra(i).Q + vbarra(i).Qcar;
-         fprintf('\nPotencia entregada por la barra PV: Barra=%i Pgen= %4.5f pu Qgen= %4.5f pu \n', i ,vbarra(i).Pgen, vbarra(i).Qgen);
+        fprintf('\nPotencia entregada por la barra PV: Barra=%i Pgen= %4.5f pu Qgen= %4.5f pu \n', i ,vbarra(i).Pgen, vbarra(i).Qgen);
         Pgentotpu = Pgentotpu + vbarra(i).Pgen;
     end
 end
@@ -113,6 +122,8 @@ for i = 1:size(matPperd,1)
     fprintf('Perdidas de P entre %i y %i: %4.5f pu \n \n',matPperd(i,1),matPperd(i,2),matPperd(i,3));
 end
 
+fprintf('Perdidas de Potencia activa total : %4.5f pu \n \n', PerdPtot);
+
 for i = 1:size(matQ,1)
     fprintf('Flujo de Q de %i a %i: %4.5f pu\n \n', matQ(i,1),matQ(i,2),matQ(i,3));
 end
@@ -121,4 +132,4 @@ for i = 1:size(matQperd,1)
     fprintf('Perdidas de Q entre %i y %i: %4.5f pu \n \n',matQperd(i,1),matQperd(i,2),matQperd(i,3));
 end
 
-
+fprintf('Perdidas de Potencia reactiva total : %4.5f pu \n \n', PerdQtot);
