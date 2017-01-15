@@ -82,7 +82,7 @@ ConA = 10^(-3);
 
 %Se establece un limite al numero de iteraciones para evitar que el programa
 %se quede trancado
-limiteIter = 10000;
+limiteIter = 5000;
 
 %------------------------------------------------------------------
    
