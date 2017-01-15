@@ -85,7 +85,7 @@ for i = 1:N_barras
         end
         vbarra(i).Qgen = vbarra(i).Q + vbarra(i).Qcar; %Se le suman las cargas en la barra slack
         
-%         fprintf('\nPotencia entregada por la barra slack: Barra=%i Pgen= %4.5f pu Qgen= %4.5f pu\n', i ,vbarra(i).Pgen, vbarra(i).Qgen);
+         fprintf('\nPotencia entregada por la barra slack: Barra=%i Pgen= %4.5f pu Qgen= %4.5f pu\n', i ,vbarra(i).Pgen, vbarra(i).Qgen);
         Pgentotpu = Pgentotpu + vbarra(i).Pgen;
     end
 end
@@ -95,7 +95,7 @@ for i = 1:N_barras
     if vbarra(i).ID == 1
         vbarra(i).Pgen = vbarra(i).P;
         vbarra(i).Qgen = vbarra(i).Q + vbarra(i).Qcar;
-%         fprintf('\nPotencia entregada por la barra PV: Barra=%i Pgen= %4.5f pu Qgen= %4.5f pu \n', i ,vbarra(i).Pgen, vbarra(i).Qgen);
+         fprintf('\nPotencia entregada por la barra PV: Barra=%i Pgen= %4.5f pu Qgen= %4.5f pu \n', i ,vbarra(i).Pgen, vbarra(i).Qgen);
         Pgentotpu = Pgentotpu + vbarra(i).Pgen;
     end
 end
