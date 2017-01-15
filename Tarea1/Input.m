@@ -14,10 +14,19 @@
 Sbase = 100; %Primero que nada se ingresa la potencia base del sistema
 
                 %bini bfin   R      X    admshuntini admshuntfin
+
+%Caso cuando hay capacitor
 datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
                  1    3   0.02    0.15      0.1          0.1 ;
                  2    3   0.03    0.10      0.15        0.15 ;
-                 3    3   0.00    -1.5       0.0          0.0];
+                 3    3   0.00    -1.5       0.0         0.0];
+
+%Caso cuando no hay capacitor
+
+% datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
+%                  1    3   0.02    0.15      0.1          0.1 ;
+%                  2    3   0.03    0.10      0.15        0.15];
+
              
 %En esta matriz se ingresan los datos iniciales de las barras:
 %El numero de barra, el codigo de la barra, el voltaje inicial, el angulo
@@ -30,9 +39,18 @@ datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
 %de NaN)
 
              %#barra Codigo Voltaje  Angulo  Pgen  Qgen  Pcar     Qcar  Qmin Qmax
+
+%Caso cuando la barra 2 genera potencia
 datosbarras = [ 1     0       1        0     0       0     0        0    NaN  NaN;
                 2     1     1.01       0     0.9     0     0        0    NaN  NaN;
                 3     2       1        0     0       0    1.5     0.75   NaN  NaN];
+
+%Caso cuando la barra 2 consume potencia
+
+datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
+                2     1     1.01       0     0     0      0.9        0    NaN  NaN;
+                3     2       1        0     0       0    1.5     0.75    NaN  NaN];
+
 %Codigos:
 %0->Slack
 %1->PV 

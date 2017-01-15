@@ -125,7 +125,12 @@ end
 fprintf('Perdidas de Potencia activa total : %4.5f pu \n \n', PerdPtot);
 
 for i = 1:size(matQ,1)
-    fprintf('Flujo de Q de %i a %i: %4.5f pu\n \n', matQ(i,1),matQ(i,2),matQ(i,3));
+    if matQ(i,1) == matQ(i,2)
+        fprintf('Potencia rectiva consumida en %i: %4.5f pu\n \n', matQ(i,1), matQ(i,3));
+    else
+        fprintf('Flujo de Q de %i a %i: %4.5f pu\n \n', matQ(i,1),matQ(i,2),matQ(i,3));   
+    end
+    
 end
 
 for i = 1:size(matQperd,1)
