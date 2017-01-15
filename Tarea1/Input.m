@@ -17,7 +17,7 @@ Sbase = 100; %Primero que nada se ingresa la potencia base del sistema
 datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
                  1    3   0.02    0.15      0.1          0.1 ;
                  2    3   0.03    0.10      0.15        0.15 ;
-                 3    3   0.00    -1.5      0.0          0.0];
+                 3    3   0.00    -1.5       0.0          0.0];
              
 %En esta matriz se ingresan los datos iniciales de las barras:
 %El numero de barra, el codigo de la barra, el voltaje inicial, el angulo
@@ -166,8 +166,14 @@ end
 BikShunt= zeros(N_barras);
 
 for i = 1:size(datoslineas,1)
-    BikShunt(datoslineas(i,1),datoslineas(i,2))= datoslineas(i,5);
-    BikShunt(datoslineas(i,2),datoslineas(i,1))= datoslineas(i,6);
+    
+    if datoslineas(i,1) == datoslineas(i,2)
+       BikShunt(datoslineas(i,1),datoslineas(i,2)) = -1/datoslineas(i,4);
+    else
+       BikShunt(datoslineas(i,1),datoslineas(i,2))= datoslineas(i,5);
+       BikShunt(datoslineas(i,2),datoslineas(i,1))= datoslineas(i,6);
+    end
+    
 end
 
 for i =1:size(TRX,1)
