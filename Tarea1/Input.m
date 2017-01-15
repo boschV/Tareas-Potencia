@@ -16,7 +16,8 @@ Sbase = 100; %Primero que nada se ingresa la potencia base del sistema
                 %bini bfin   R      X    admshuntini admshuntfin
 datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
                  1    3   0.02    0.15      0.1          0.1 ;
-                 2    3   0.03    0.10      0.15        0.15];
+                 2    3   0.03    0.10      0.15        0.15 ;
+                 3    3   0.00    -1.5      0.0          0.0];
              
 %En esta matriz se ingresan los datos iniciales de las barras:
 %El numero de barra, el codigo de la barra, el voltaje inicial, el angulo
@@ -63,7 +64,7 @@ ConA = 10^(-3);
 
 %Se establece un limite al numero de iteraciones para evitar que el programa
 %se quede trancado
-limiteIter = 5000;
+limiteIter = 10000;
 
 %------------------------------------------------------------------
    

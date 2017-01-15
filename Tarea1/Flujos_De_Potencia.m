@@ -103,21 +103,22 @@ end
 Pgentot = Pgentotpu*Sbase;
 
 %Se imprimen todos los flujos de potencia
-% fprintf('\n');
-% for i = 1:size(matP,1)
-%     fprintf('Flujo de P de %i a %i: %4.5f pu \n \n', matP(i,1),matP(i,2),matP(i,3));
-% end
-% 
-% for i = 1:size(matPperd,1)
-%     fprintf('Perdidas de P entre %i y %i: %4.5f pu \n \n',matPperd(i,1),matPperd(i,2),matPperd(i,3));
-% end
-% 
-% for i = 1:size(matQ,1)
-%     fprintf('Flujo de Q de %i a %i: %4.5f pu\n \n', matQ(i,1),matQ(i,2),matQ(i,3));
-% end
-% 
-% for i = 1:size(matQperd,1)
-%     fprintf('Perdidas de Q entre %i y %i: %4.5f pu \n \n',matQperd(i,1),matQperd(i,2),matQperd(i,3));
-% end
-% 
+
+fprintf('\n');
+for i = 1:size(matP,1)
+    fprintf('Flujo de P de %i a %i: %4.5f pu \n \n', matP(i,1),matP(i,2),matP(i,3));
+end
+
+for i = 1:size(matPperd,1)
+    fprintf('Perdidas de P entre %i y %i: %4.5f pu \n \n',matPperd(i,1),matPperd(i,2),matPperd(i,3));
+end
+
+for i = 1:size(matQ,1)
+    fprintf('Flujo de Q de %i a %i: %4.5f pu\n \n', matQ(i,1),matQ(i,2),matQ(i,3));
+end
+
+for i = 1:size(matQperd,1)
+    fprintf('Perdidas de Q entre %i y %i: %4.5f pu \n \n',matQperd(i,1),matQperd(i,2),matQperd(i,3));
+end
+
 

@@ -86,8 +86,8 @@ Voltajes = zeros(N_barras, 2);
 
 for i=1:N_barras
     Voltajes(i,1)=abs(vbarra(i).Vp);
-    Voltajes(i,2)=180*angle(vbarra(i).Vp)/pi;
-    %fprintf('\n Barra: %i, V= %5.4f ang %5.4f \n',i,Voltajes(i,1),Voltajes(i,2));
+    Voltajes(i,2)=angle(vbarra(i).Vp); %Angulo en rad
+    fprintf('\n Barra: %i, V= %5.4f ang %5.4f \n',i,Voltajes(i,1),Voltajes(i,2));
 end
 
 
