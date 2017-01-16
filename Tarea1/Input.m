@@ -20,13 +20,6 @@ datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
                  1    3   0.02    0.15      0.1          0.1 ;
                  2    3   0.03    0.10      0.15        0.15 ;
                  3    3   0.00    -1.5       0.0         0.0];
-
-%Caso cuando no hay capacitor
-
-% datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
-%                  1    3   0.02    0.15      0.1          0.1 ;
-%                  2    3   0.03    0.10      0.15        0.15];
-
              
 %En esta matriz se ingresan los datos iniciales de las barras:
 %El numero de barra, el codigo de la barra, el voltaje inicial, el angulo
@@ -47,9 +40,9 @@ datosbarras = [ 1     0       1        0     0       0     0        0    NaN  Na
 
 %Caso cuando la barra 2 consume 0.2 de potencia
 
-datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
-                2     1     1.01       0     0     0      0.2        0    NaN  NaN;
-                3     2       1        0     0       0    1.5     0.75    NaN  NaN];
+% datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
+%                 2     1     1.01       0     0     0      0.2        0    NaN  NaN;
+%                 3     2       1        0     0       0    1.5     0.75    NaN  NaN];
 
 %Codigos:
 %0->Slack
