@@ -41,7 +41,7 @@ datosbarras = [ 1     0       1        0     0       0     0        0    NaN  Na
 %Caso cuando la barra 2 consume 0.2 de potencia
 
 % datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
-%                 2     1     1.01       0     0     0      0.2        0    NaN  NaN;
+%                 2     1     1.01       0     0       0    0.2        0    NaN  NaN;
 %                 3     2       1        0     0       0    1.5     0.75    NaN  NaN];
 
 %Codigos:
