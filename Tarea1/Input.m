@@ -15,7 +15,6 @@ Sbase = 100; %Primero que nada se ingresa la potencia base del sistema
 
                 %bini bfin   R      X    admshuntini admshuntfin
 
-%Caso cuando hay capacitor
 datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
                  1    3   0.02    0.15      0.1          0.1 ;
                  2    3   0.03    0.10      0.15        0.15 ;
@@ -31,18 +30,18 @@ datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
 %probablemente no funcione correctamente cuando Qmin y Qmax sean distintas
 %de NaN)
 
-             %#barra Codigo Voltaje  Angulo  Pgen  Qgen  Pcar     Qcar  Qmin Qmax
+             %#barra Codigo Voltaje  Angulo  Pgen  Qgen    Pcar     Qcar  Qmin Qmax
 
 %Caso cuando la barra 2 genera potencia
-datosbarras = [ 1     0       1        0     0       0     0        0    NaN  NaN;
-                2     1     1.01       0     0.9     0     0        0    NaN  NaN;
-                3     2       1        0     0       0    1.5     0.75   NaN  NaN];
+% datosbarras = [ 1     0       1        0     0       0     0        0    NaN  NaN;
+%                 2     1     1.01       0     0.9     0     0        0    NaN  NaN;
+%                 3     2       1        0     0       0    1.5     0.75   NaN  NaN];
 
 %Caso cuando la barra 2 consume 0.2 de potencia
 
-% datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
-%                 2     1     1.01       0     0       0    0.2        0    NaN  NaN;
-%                 3     2       1        0     0       0    1.5     0.75    NaN  NaN];
+datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
+                2     1     1.01       0     0       0    0.2        0    NaN  NaN;
+                3     2       1        0     0       0    1.5     0.75    NaN  NaN];
 
 %Codigos:
 %0->Slack
