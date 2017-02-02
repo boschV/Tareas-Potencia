@@ -109,7 +109,7 @@ for i = 1:N_barras
     end
 end
 
-Pgentot = Pgentotpu*Sbase;
+
 
 %Se imprimen todos los flujos de potencia
 

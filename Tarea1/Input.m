@@ -11,8 +11,6 @@
 %barra inicial, barra final, R, X, admitancia shunt en el lado de la barra
 %inicial y admitancia shunt en el lado de la barra final
 
-Sbase = 100; %Primero que nada se ingresa la potencia base del sistema
-
                 %bini bfin   R      X    admshuntini admshuntfin
 
 datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
@@ -32,16 +30,16 @@ datoslineas = [  1    2   0.01    0.20      0.05        0.05 ;
 
              %#barra Codigo Voltaje  Angulo  Pgen  Qgen    Pcar     Qcar  Qmin Qmax
 
-%Caso cuando la barra 2 genera potencia
-% datosbarras = [ 1     0       1        0     0       0     0        0    NaN  NaN;
-%                 2     1     1.01       0     0.9     0     0        0    NaN  NaN;
-%                 3     2       1        0     0       0    1.5     0.75   NaN  NaN];
+%Caso cuando la barra 2 genera 0.9pu de potencia
+datosbarras = [ 1     0       1        0     0       0     0        0    NaN  NaN;
+                2     1     1.01       0     0.9     0     0        0    NaN  NaN;
+                3     2       1        0     0       0    1.5     0.75   NaN  NaN];
 
-%Caso cuando la barra 2 consume 0.2 de potencia
+%Caso cuando la barra 2 consume 0.2pu de potencia
 
-datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
-                2     1     1.01       0     0       0    0.2        0    NaN  NaN;
-                3     2       1        0     0       0    1.5     0.75    NaN  NaN];
+% datosbarras = [ 1     0       1        0     0       0     0         0    NaN  NaN;
+%                 2     1     1.01       0     0       0    0.2        0    NaN  NaN;
+%                 3     2       1        0     0       0    1.5     0.75    NaN  NaN];
 
 %Codigos:
 %0->Slack

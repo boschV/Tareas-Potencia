@@ -10,9 +10,9 @@ gik = real(-Ybus(i,k));
 biksh = BikShunt(i,k);
 angik= angle(vbarra(i).Vp)-angle(vbarra(k).Vp);
 
-a = (-(abs(vbarra(i).Vp))^2)*(bik+biksh);
-b = (abs(vbarra(i).Vp)*abs(vbarra(k).Vp));
-c = (bik*cos(angik))-(gik*sin(angik));
+a = (-(abs(vbarra(i).Vp))^2)*(bik+biksh)
+b = (abs(vbarra(i).Vp)*abs(vbarra(k).Vp))
+c = (bik*cos(angik))-(gik*sin(angik))
 
 Q = a + (b*c);
 
